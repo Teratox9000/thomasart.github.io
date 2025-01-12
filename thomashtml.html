@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ART</title>
+    <link rel="stylesheet" href="styles2.css">
+</head>
+<body>
+    <div class="art-horizontal" id="artHorizontal">ART</div>
+    <div class="art-vertical" id="artVertical">
+        <span id="letterA">A</span>
+        <span id="letterR">R</span>
+        <span id="letterT">T</span>
+    </div>
+    <div class="what-is-art" id="whatIsArt">WHAT IS <a id="artLink" href="quotes.html">ART</a>?</div>
+    <div class="scroll-area"></div>
+
+    <script>
+        const artHorizontal = document.getElementById('artHorizontal');
+        const artVertical = document.getElementById('artVertical');
+        const letterA = document.getElementById('letterA');
+        const letterR = document.getElementById('letterR');
+        const letterT = document.getElementById('letterT');
+        const whatIsArt = document.getElementById('whatIsArt');
+
+        let hasScrolledToVertical = false;
+
+        window.addEventListener('scroll', () => {
+            const scrollY = window.scrollY;
+
+            if (scrollY > window.innerHeight / 2 && scrollY <= window.innerHeight * 1.5 && !hasScrolledToVertical) {
+                // Transition to vertical view
+                artHorizontal.style.transform = 'translate(-50%, -50%) scale(0)';
+                artHorizontal.style.opacity = '0';
+
+                artVertical.style.opacity = '1';
+                letterA.style.transform = 'translateX(0)';
+                letterA.style.opacity = '1';
+
+                setTimeout(() => {
+                    letterR.style.transform = 'translateX(0)';
+                    letterR.style.opacity = '1';
+                }, 200);
+
+                setTimeout(() => {
+                    letterT.style.transform = 'translateX(0)';
+                    letterT.style.opacity = '1';
+                }, 400);
+
+                hasScrolledToVertical = true;
+            } else if (scrollY > window.innerHeight * 1.5) {
+                // Transition to "WHAT IS ART?"
+                letterA.style.opacity = '0';
+                letterA.style.transform = 'translateX(-50px)';
+
+                setTimeout(() => {
+                    letterR.style.opacity = '0';
+                    letterR.style.transform = 'translateX(-50px)';
+                }, 200);
+
+                setTimeout(() => {
+                    letterT.style.opacity = '0';
+                    letterT.style.transform = 'translateX(-50px)';
+                }, 400);
+
+                artVertical.style.opacity = '0';
+
+                whatIsArt.style.transform = 'translate(-50%, -50%) scale(1)';
+                whatIsArt.style.opacity = '1';
+            } else if (scrollY <= window.innerHeight / 2) {
+                // Transition back to horizontal view
+                artHorizontal.style.transform = 'translate(-50%, -50%) scale(1)';
+                artHorizontal.style.opacity = '1';
+
+                artVertical.style.opacity = '0';
+                letterA.style.opacity = '0';
+                letterR.style.opacity = '0';
+                letterT.style.opacity = '0';
+
+                whatIsArt.style.transform = 'translate(-50%, -50%) scale(0)';
+                whatIsArt.style.opacity = '0';
+
+                hasScrolledToVertical = false;
+            }
+        });
+    </script>
+</body>
+</html>
+

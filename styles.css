@@ -1,0 +1,144 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+    overflow-x: hidden;
+}
+
+.center-text {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+    font-size: 2rem; /* Reduced font size */
+    font-weight: bold;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.section {
+    padding: 50px 10%;
+    box-sizing: border-box;
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 2.5rem;
+    font-weight: bold;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.8s ease;
+}
+
+.quote-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 20px;
+    width: 90%;
+    margin: 0 auto;
+}
+
+.quote {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 2rem;
+    line-height: 1.5;
+    padding: 20px;
+    box-sizing: border-box;
+    font-style: italic;
+}
+
+.art-context {
+    display: flex;
+    align-items: center;
+    margin-bottom: 50px;
+}
+
+.art-context img {
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+    margin-right: 20px;
+    opacity: 0;
+    transform: scale(0.9);
+    transition: all 0.8s ease;
+}
+
+.art-context .text {
+    font-size: 1.5rem;
+    line-height: 1.6;
+    text-align: justify;
+}
+
+.art-context-group {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+}
+
+.art-context-group .art-context {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.art-context-group img {
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+    margin-bottom: 15px;
+    opacity: 0;
+    transform: scale(0.9);
+    transition: all 0.8s ease;
+}
+
+.nav-bar {
+    position: relative;
+    width: 100%;
+    background-color: #333;
+    color: white;
+    display: flex;
+    justify-content: center;
+    padding: 10px 0;
+    z-index: 1000;
+}
+
+.nav-bar a {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 1rem;
+}
+
+.nav-bar a:hover {
+    text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+    .art-context {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .art-context img {
+        width: 100%;
+        height: auto;
+        margin-right: 0;
+        margin-bottom: 20px;
+    }
+
+    .art-context .text {
+        font-size: 1.2rem;
+    }
+
+    .art-context-group {
+        grid-template-columns: 1fr;
+    }
+}

@@ -1,0 +1,67 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+    overflow-x: hidden;
+}
+
+.art-horizontal {
+    font-size: 35vw;
+    white-space: nowrap;
+    text-align: center;
+    position: fixed;
+    width: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(1);
+    transition: transform 0.5s ease, opacity 0.5s ease;
+    opacity: 1;
+}
+
+.art-vertical {
+    font-size: 10vw;
+    position: fixed;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    opacity: 0;
+}
+
+.art-vertical span {
+    display: block;
+    opacity: 0;
+    transform: translateX(-50px);
+    transition: transform 0.5s ease, opacity 0.5s ease;
+}
+
+.what-is-art {
+    font-size: 10vw;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    opacity: 0;
+    white-space: nowrap;
+    text-align: center;
+    transition: transform 0.5s ease, opacity 0.5s ease;
+}
+
+.what-is-art a {
+    color: red;
+    text-decoration: underline;
+    animation: blink 0.5s infinite alternate;
+}
+
+@keyframes blink {
+    0% {
+        text-decoration: underline;
+    }
+    100% {
+        text-decoration: none;
+    }
+}
+
+.scroll-area {
+    height: 300vh;
+}

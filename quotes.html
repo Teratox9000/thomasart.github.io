@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quotes and Art Contexts</title>
+    <link rel="stylesheet" href="styles.css">
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const headers = document.querySelectorAll(".header");
+            const images = document.querySelectorAll("img");
+
+            const observer = new IntersectionObserver(entries => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = 1;
+                        entry.target.style.transform = entry.target.tagName === "IMG" ? "scale(1)" : "translateY(0)";
+                    } else {
+                        entry.target.style.opacity = 0;
+                        entry.target.style.transform = entry.target.tagName === "IMG" ? "scale(0.9)" : "translateY(20px)";
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            headers.forEach(header => {
+                observer.observe(header);
+            });
+
+            images.forEach(image => {
+                observer.observe(image);
+            });
+        });
+    </script>
+</head>
+<body>
+    <!-- Centered Art Definition -->
+
+    <!-- Introduction Section -->
+    <div class="section" id="definition">
+        <div class="header">My Definition of Art</div>
+        <div class="center-text">
+            Art is a way to express one's thoughts and feelings, evoking different emotions in the viewer, such as joy, sadness, motivation, and so on.
+        </div>
+    </div>
+
+    <!-- First Section -->
+    <div class="section" id="meaning">
+        <div class="header">Meaning of Art for Different People</div>
+        <div class="quote-container">
+            <div class="quote">Enya R.: "For me, art is displaying one's inner thoughts and feelings to the outside world."</div>
+            <div class="quote">Lima A.: "I am art."</div>
+            <div class="quote">Manu Sch.: "Art is what makes life bearable."</div>
+            <div class="quote">Jonas Sch.: "Art stands for creativity, emotions and expression."</div>
+        </div>
+    </div>
+
+    <!-- Second Section -->
+    <div class="section" id="contexts">
+        <div class="header">Art in Different Contexts</div>
+        <div class="art-context">
+            <img src="images/starry-night.jpg" alt="Van Gogh - The Starry Night">
+            <div class="text">1. Traditional Art: Traditional art, like Van Gogh's "The Starry Night," shows deep feelings and beauty. His bold colors and strong brushstrokes share emotions like joy, sadness, and passion. These artworks tell stories and help us connect with the artist's thoughts and emotions, making us feel something personal and meaningful.</div>
+        </div>
+        <div class="art-context">
+            <img src="images/garde.jpg" alt="Performing Art">
+            <div class="text">2. Performing Art: Gardetanz is a fun and energetic dance that mixes skill and art. With precise moves, colorful costumes, and creative choreography, it shows tradition and teamwork. It’s an art because it tells a story, brings people joy, and highlights the dancers’ hard work and passion for performing.</div>
+        </div>
+        <div class="art-context">
+            <img src="images/digitalart.jpeg" alt="Digital Art">
+            <div class="text">3. Digital Art: Digital art is a form of art created using digital technology. It includes drawings, paintings, animations, 3D models, and more, made with tools like computers, tablets, or software programs. Digital art allows artists to experiment with colors, styles, and effects easily, offering endless possibilities to express creativity in a modern way.</div>
+        </div>
+        <div class="art-context">
+            <img src="images/craftsmanship.jpeg" alt="Craftsmanship">
+            <div class="text">4. Craftsmanship: Craftsmanship is the skill of making things with care and detail. It focuses on quality and combines usefulness with beauty. From handmade furniture to fine jewelry, it shows creativity and hard work. Craftsmanship turns simple materials into special items that people admire and that keep traditions alive.</div>
+        </div>
+        <div class="art-context">
+            <img src="images/literary.jpg" alt="Literary Art">
+            <div class="text">5. Literary Art: Literary art uses words to inspire, entertain, and express ideas. Through stories, poems, and plays, it captures emotions and explores human experiences. Writers create vivid worlds, share deep feelings, and spark imagination. Literary art connects people across time and cultures, offering insights into life and the beauty of language.</div>
+        </div>
+        <div class="art-context">
+            <img src="images/entertainment.jpg" alt="Entertainment Art">
+            <div class="text">6. Entertainment Art: Entertainment art uses creativity to bring joy and wonder to people. It includes magic, where illusions amaze the audience, comedy that creates laughter through jokes and stories, and street performances that turn public spaces into stages. These forms connect with people, offering unique and memorable moments through skill and imagination.</div>
+        </div>
+    </div>
+
+    <!-- Third Section -->
+    <div class="section" id="impossible">
+        <div class="header">Impossible Context</div>
+        <div class="art-context">
+            <img src="images/vakuum.jpeg" alt="Vacuum">
+            <div class="text">An artwork that exists entirely in a physical vacuum, where there is no matter or energy, like light or sound. Since art usually needs something physical or visual to be seen or experienced, it would be impossible for art to exist in such a place because there’s nothing to show or sense it.</div>
+        </div>
+    </div>
+
+    <!-- Fourth Section -->
+    <div class="section" id="derivative">
+        <div class="header">Derivative Forms of Art</div>
+        <div class="art-context-group">
+            <div class="art-context">
+                <img src="images/artwork.jpeg" alt="Artwork">
+                <div class="text">Artwork: A created piece that expresses an idea or emotion, such as a painting, sculpture, or digital creation.</div>
+            </div>
+            <div class="art-context">
+                <img src="images/artist.jpeg" alt="Artist">
+                <div class="text">Artist: A person who creates art.</div>
+            </div>
+            <div class="art-context">
+                <img src="images/artisan.jpeg" alt="Artisan">
+                <div class="text">Artisan: A skilled craftsperson who makes functional or decorative objects by hand, often with traditional techniques.</div>
+            </div>
+            <div class="art-context">
+                <img src="images/artistic.jpeg" alt="Artistic">
+                <div class="text">Artistic: Having or showing creative skill and imagination.</div>
+            </div>
+            <div class="art-context">
+                <img src="images/artifical.jpeg" alt="Artificial">
+                <div class="text">Artificial: Something made or produced by humans, often imitating a natural object or process.</div>
+            </div>
+            <div class="art-context">
+                <img src="images/artful.jpeg" alt="Artful">
+                <div class="text">Artful: Clever and skillful, often in a creative or tricky way.</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Fifth Section -->
+    <div class="section" id="journey">
+        <div class="header">My Journey with the word Art</div>
+        <div class="center-text">
+            I wouldn't describe myself as a big arty person, but I learned that art is more than just the obvious contexts like paintings and music.
+            Art is in every little thing. Anything can be art. Even people who don't describe themselves as artistic have a spark of art within them, in the form of thoughts, skills, and creativity.
+        </div>
+    </div>
+
+    <!-- Navigation Bar -->
+    <div class="nav-bar" style="position: static; margin-top: 50px;">
+        <a href="#definition">Definition</a>
+        <a href="#meaning">Meaning</a>
+        <a href="#contexts">Contexts</a>
+        <a href="#impossible">Impossible</a>
+        <a href="#derivative">Derivative</a>
+        <a href="#journey">Journey</a>
+    </div>
+</body>
+</html>
+
